@@ -1,0 +1,50 @@
+<!-- Form per aggiungere un piatto -->
+<form (ngSubmit)="addPiatto()">
+    <input
+      type="text"
+      [(ngModel)]="newPiatto.name"
+      name="name"
+      placeholder="Nome del piatto"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="newPiatto.description"
+      name="description"
+      placeholder="Descrizione"
+      required
+    />
+    <input
+      type="number"
+      [(ngModel)]="newPiatto.price"
+      name="price"
+      placeholder="Prezzo"
+      required
+    />
+    <button type="submit">Aggiungi Piatto</button>
+</form>
+
+<h2>Lista Piatti</h2>
+
+<!-- Tabella per visualizzare i piatti -->
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descrizione</th>
+      <th>Prezzo</th>
+      <th>Azioni</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let piatto of piatti">
+      <td>{{ piatto.name }}</td>
+      <td>{{ piatto.description }}</td>
+      <td>{{ piatto.price | currency:'EUR' }}</td>
+      <td>
+        <!-- Passa l'ID del piatto corrente -->
+        <button *ngIf="piatto.id !== undefined" (click)="rimuoviPiatto(piatto.id)">Rimuovi</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
