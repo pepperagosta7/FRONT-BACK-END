@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-menu-list',
-  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './menu-list.component.html',
   styleUrl: './menu-list.component.css'

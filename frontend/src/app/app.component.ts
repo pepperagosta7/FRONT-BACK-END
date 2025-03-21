@@ -4,7 +4,6 @@ import { MenuListComponent } from "./menu-list/menu-list.component";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, MenuListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
